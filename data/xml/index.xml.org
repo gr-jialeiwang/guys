@@ -1,0 +1,2836 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manage>
+<title>GUYS</title>
+<table_list>
+	<table name="common" alias="共通" manage_type="table">
+
+		<sql type="check_loginsession">
+		<![CDATA[
+		SELECT 
+		* 
+		FROM CMMloginsession 
+		WHERE auto_login_key = '?';
+		]]>
+		</sql>
+
+		<sql type="status_staffListBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND staffListBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_staffListEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND staffListEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_companyList">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND companyList = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_companyListEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND companyListEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_orderDataBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND orderDataBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_orderDataEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND orderDataEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_advanceOrderDataBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND advanceOrderDataBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_advanceOrderDataEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND advanceOrderDataEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_materialSellingDataBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND materialSellingDataBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_materialSellingDataEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND materialSellingDataEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_stockDataBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND stockDataBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_stockDataEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND stockDataEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_productNumberBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND productNumberBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_productNumberEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND productNumberEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_deliverySlipBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND deliverySlipBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_deliverySlipEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND deliverySlipEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_clientPageEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND clientPageEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionPageEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionPageEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionPageCopyEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionPageCopyEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionPageDeleteEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionPageDeleteEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionSearchEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionSearchEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_clientSearchEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND clientSearchEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_aggregatedDataEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND aggregatedDataEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_masterDataEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND masterDataEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_estimateEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND estimateEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_personApplicableEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND personApplicableEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_administratorEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND administratorEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_basicInfomationListBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND basicInfomationListBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_basicInfomationListEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND basicInfomationListEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_sellAccountingBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND sellAccountingBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_sellAccountingEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND sellAccountingEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_purchaseAcconuntingBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND purchaseAcconuntingBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_purchaseAcconuntingEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND purchaseAcconuntingEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_purchaseOrderBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND purchaseOrderBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_purchaseOrderEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND purchaseOrderEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_staffDataBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND staffDataBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_staffDataEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND staffDataEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_staffDataLv2Browse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND staffDataLv2Browse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_staffDataLv2Edit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND staffDataLv2Edit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_staffDataLv3Browse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND staffDataLv3Browse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_staffDataLv3Edit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND staffDataLv3Edit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_advanceMoneyBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND advanceMoneyBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_advanceMoneyEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND advanceMoneyEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_orderRequestBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND orderRequestBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_orderRequestEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND orderRequestEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_billBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND billBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_billEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND billEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_accountsReceivablePriceBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND accountsReceivablePriceBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_accountsReceivablePriceEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND accountsReceivablePriceEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_unpaidBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND unpaidBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_unpaidEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND unpaidEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_orderHistoryBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND orderHistoryBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_orderHistoryEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND orderHistoryEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_accountsPayablePriceBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND accountsPayablePriceBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_accountsPayablePriceEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND accountsPayablePriceEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionInfoBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionInfoBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionInfoEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionInfoEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionEstimateBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionEstimateBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionEstimateEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionEstimateEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_integrationDataBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND integrationDataBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_integrationDataEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND integrationDataEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_integrationFormBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND integrationFormBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_integrationFormEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND integrationFormEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_expectedCostBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND expectedCostBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_expectedCostEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND expectedCostEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionOrderBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionOrderBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionOrderEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionOrderEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_reportListBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND reportListBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_reportListEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND reportListEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionCostBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionCostBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_constructionCostEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND constructionCostEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_executionCostBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND executionCostBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_executionCostEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND executionCostEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_billingBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND billingBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_billingEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND billingEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_paymentProccessBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND paymentProccessBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_paymentProccessEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND paymentProccessEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_paymentScheduleBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND paymentScheduleBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_paymentScheduleEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND paymentScheduleEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_accountsReceivableBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND accountsReceivableBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_accountsReceivableEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND accountsReceivableEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_invoiceProcessBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND invoiceProcessBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_invoiceProcessEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND invoiceProcessEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_paymentProcessBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND paymentProcessBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_paymentProcessEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND paymentProcessEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_expensesBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND expensesBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_expensesEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND expensesEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_paymentSchedule2Browse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND paymentSchedule2Browse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_paymentSchedule2Edit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND paymentSchedule2Edit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_accountsPayableBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND accountsPayableBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_accountsPayableEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND accountsPayableEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_workInProcessBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND workInProcessBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_workInProcessEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND workInProcessEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_accountActivityBrowse">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND accountActivityBrowse = '1' AND state = '1';
+		]]>
+		</sql>
+
+		<sql type="status_accountActivityEdit">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND accountActivityEdit = '1' AND state = '1';
+		]]>
+		</sql>
+
+	</table>
+
+
+	<table name="index" alias="ログイン画面" manage_type="table">
+
+		<sql type="regist_loginsession">
+		<![CDATA[
+		INSERT INTO CMMloginsession (
+			staffID, 
+			systemID, 
+			auto_login_key, 
+			regist_date
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?'
+		);
+		]]>
+		</sql>
+
+		<sql type="delete_loginsession">
+		<![CDATA[
+		DELETE FROM CMMloginsession 
+		WHERE staffID = '?';
+		]]>
+		</sql>
+
+		<template type="index">contents_index_index.tpl</template>
+
+	</table>
+
+	<table name="top" alias="トップ" manage_type="table">
+
+		<template type="index">contents_top_index.tpl</template>
+
+	</table>
+
+	<table name="staff" alias="スタッフ" manage_type="table">
+
+		<sql type="count_staff">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE state = '?';
+		]]>
+		</sql>
+
+		<sql type="select_staff">
+		<![CDATA[
+		SELECT 
+		* 
+		FROM GUMstaff 
+		WHERE state = '?' 
+		]]>
+		</sql>
+
+		<sql type="select_staff_id">
+		<![CDATA[
+		SELECT 
+		* 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND state = '?';
+		]]>
+		</sql>
+
+		<sql type="staff_id_check">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE staffID = '?' AND state = '?';
+		]]>
+		</sql>
+
+		<sql type="system_id_check">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMstaff 
+		WHERE systemID = '?' AND state = '?';
+		]]>
+		</sql>
+
+		<sql type="insert_staff">
+		<![CDATA[
+		INSERT INTO GUMstaff (
+			staffID, 
+			department, 
+			state, 
+			name, 
+			position, 
+			hourlyWage, 
+			kana, 
+			phoneNumerAreaCode, 
+			phoneNumerFirstHalf, 
+			phoneNumerLastHalf, 
+			systemID, 
+			password, 
+			staffListBrowse, 
+			staffListEdit, 
+			companyList, 
+			companyListEdit, 
+			orderDataBrowse, 
+			orderDataEdit, 
+			advanceOrderDataBrowse, 
+			advanceOrderDataEdit, 
+			materialSellingDataBrowse, 
+			materialSellingDataEdit, 
+			stockDataBrowse, 
+			stockDataEdit, 
+			productNumberBrowse, 
+			productNumberEdit, 
+			deliverySlipBrowse, 
+			deliverySlipEdit, 
+			clientPageEdit, 
+			constructionPageEdit, 
+			constructionPageCopyEdit, 
+			constructionPageDeleteEdit, 
+			constructionSearchEdit, 
+			clientSearchEdit, 
+			aggregatedDataEdit, 
+			masterDataEdit, 
+			estimateEdit, 
+			personApplicableEdit, 
+			administratorEdit, 
+			basicInfomationListBrowse, 
+			basicInfomationListEdit, 
+			sellAccountingBrowse, 
+			sellAccountingEdit, 
+			purchaseAcconuntingBrowse, 
+			purchaseAcconuntingEdit, 
+			purchaseOrderBrowse, 
+			purchaseOrderEdit, 
+			staffDataBrowse, 
+			staffDataEdit, 
+			staffDataLv2Browse, 
+			staffDataLv2Edit, 
+			staffDataLv3Browse, 
+			staffDataLv3Edit, 
+			advanceMoneyBrowse, 
+			advanceMoneyEdit, 
+			orderRequestBrowse, 
+			orderRequestEdit, 
+			billBrowse, 
+			billEdit, 
+			accountsReceivablePriceBrowse, 
+			accountsReceivablePriceEdit, 
+			unpaidBrowse, 
+			unpaidEdit, 
+			orderHistoryBrowse, 
+			orderHistoryEdit, 
+			accountsPayablePriceBrowse, 
+			accountsPayablePriceEdit, 
+			constructionInfoBrowse, 
+			constructionInfoEdit, 
+			constructionEstimateBrowse, 
+			constructionEstimateEdit, 
+			integrationDataBrowse, 
+			integrationDataEdit, 
+			integrationFormBrowse, 
+			integrationFormEdit, 
+			expectedCostBrowse, 
+			expectedCostEdit, 
+			constructionOrderBrowse, 
+			constructionOrderEdit, 
+			reportListBrowse, 
+			reportListEdit, 
+			constructionCostBrowse, 
+			constructionCostEdit, 
+			executionCostBrowse, 
+			executionCostEdit, 
+			billingBrowse, 
+			billingEdit, 
+			paymentProccessBrowse, 
+			paymentProccessEdit, 
+			paymentScheduleBrowse, 
+			paymentScheduleEdit, 
+			accountsReceivableBrowse, 
+			accountsReceivableEdit, 
+			invoiceProcessBrowse, 
+			invoiceProcessEdit, 
+			paymentProcessBrowse, 
+			paymentProcessEdit, 
+			expensesBrowse, 
+			expensesEdit, 
+			paymentSchedule2Browse, 
+			paymentSchedule2Edit, 
+			accountsPayableBrowse, 
+			accountsPayableEdit, 
+			workInProcessBrowse, 
+			workInProcessEdit, 
+			accountActivityBrowse, 
+			accountActivityEdit, 
+			regist_staffID, 
+			update_staffID,
+			regist_date, 
+			update_date,
+			status 
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?' 
+		);
+		]]>
+		</sql>
+
+		<sql type="update_staff_base">
+		<![CDATA[
+		UPDATE GUMstaff SET 
+		staffID = '?', 
+		department = '?', 
+		state = '?', 
+		name = '?', 
+		position = '?', 
+		hourlyWage = '?', 
+		kana = '?', 
+		phoneNumerAreaCode = '?', 
+		phoneNumerFirstHalf = '?', 
+		phoneNumerLastHalf = '?', 
+		update_staffID = '?', 
+		update_date = '?' 
+		WHERE staffID = '?';
+		]]>
+		</sql>
+
+		<sql type="update_staff_system_nopassword">
+		<![CDATA[
+		UPDATE GUMstaff SET 
+		systemID = '?', 
+		staffListBrowse = '?', 
+		staffListEdit = '?', 
+		companyList = '?', 
+		companyListEdit = '?', 
+		orderDataBrowse = '?', 
+		orderDataEdit = '?', 
+		advanceOrderDataBrowse = '?', 
+		advanceOrderDataEdit = '?', 
+		materialSellingDataBrowse = '?', 
+		materialSellingDataEdit = '?', 
+		stockDataBrowse = '?', 
+		stockDataEdit = '?', 
+		productNumberBrowse = '?', 
+		productNumberEdit = '?', 
+		deliverySlipBrowse = '?', 
+		deliverySlipEdit = '?', 
+		clientPageEdit = '?', 
+		constructionPageEdit = '?', 
+		constructionPageCopyEdit = '?', 
+		constructionPageDeleteEdit = '?', 
+		constructionSearchEdit = '?', 
+		clientSearchEdit = '?', 
+		aggregatedDataEdit = '?', 
+		masterDataEdit = '?', 
+		estimateEdit = '?', 
+		personApplicableEdit = '?', 
+		administratorEdit = '?', 
+		basicInfomationListBrowse = '?', 
+		basicInfomationListEdit = '?', 
+		sellAccountingBrowse = '?', 
+		sellAccountingEdit = '?', 
+		purchaseAcconuntingBrowse = '?', 
+		purchaseAcconuntingEdit = '?', 
+		purchaseOrderBrowse = '?', 
+		purchaseOrderEdit = '?', 
+		staffDataBrowse = '?', 
+		staffDataEdit = '?', 
+		staffDataLv2Browse = '?', 
+		staffDataLv2Edit = '?', 
+		staffDataLv3Browse = '?', 
+		staffDataLv3Edit = '?', 
+		advanceMoneyBrowse = '?', 
+		advanceMoneyEdit = '?', 
+		orderRequestBrowse = '?', 
+		orderRequestEdit = '?', 
+		billBrowse = '?', 
+		billEdit = '?', 
+		accountsReceivablePriceBrowse = '?', 
+		accountsReceivablePriceEdit = '?', 
+		unpaidBrowse = '?', 
+		unpaidEdit = '?', 
+		orderHistoryBrowse = '?', 
+		orderHistoryEdit = '?', 
+		accountsPayablePriceBrowse = '?', 
+		accountsPayablePriceEdit = '?', 
+		constructionInfoBrowse = '?', 
+		constructionInfoEdit = '?', 
+		constructionEstimateBrowse = '?', 
+		constructionEstimateEdit = '?', 
+		integrationDataBrowse = '?', 
+		integrationDataEdit = '?', 
+		integrationFormBrowse = '?', 
+		integrationFormEdit = '?', 
+		expectedCostBrowse = '?', 
+		expectedCostEdit = '?', 
+		constructionOrderBrowse = '?', 
+		constructionOrderEdit = '?', 
+		reportListBrowse = '?', 
+		reportListEdit = '?', 
+		constructionCostBrowse = '?', 
+		constructionCostEdit = '?', 
+		executionCostBrowse = '?', 
+		executionCostEdit = '?', 
+		billingBrowse = '?', 
+		billingEdit = '?', 
+		paymentProccessBrowse = '?', 
+		paymentProccessEdit = '?', 
+		paymentScheduleBrowse = '?', 
+		paymentScheduleEdit = '?', 
+		accountsReceivableBrowse = '?', 
+		accountsReceivableEdit = '?', 
+		invoiceProcessBrowse = '?', 
+		invoiceProcessEdit = '?', 
+		paymentProcessBrowse = '?', 
+		paymentProcessEdit = '?', 
+		expensesBrowse = '?', 
+		expensesEdit = '?', 
+		paymentSchedule2Browse = '?', 
+		paymentSchedule2Edit = '?', 
+		accountsPayableBrowse = '?', 
+		accountsPayableEdit = '?', 
+		workInProcessBrowse = '?', 
+		workInProcessEdit = '?', 
+		accountActivityBrowse = '?', 
+		accountActivityEdit = '?', 
+		update_staffID = '?', 
+		update_date = '?' 
+		WHERE staffID = '?';
+		]]>
+		</sql>
+
+		<sql type="update_staff_system">
+		<![CDATA[
+		UPDATE GUMstaff SET 
+		systemID = '?', 
+		password = '?', 
+		staffListBrowse = '?', 
+		staffListEdit = '?', 
+		companyList = '?', 
+		companyListEdit = '?', 
+		orderDataBrowse = '?', 
+		orderDataEdit = '?', 
+		advanceOrderDataBrowse = '?', 
+		advanceOrderDataEdit = '?', 
+		materialSellingDataBrowse = '?', 
+		materialSellingDataEdit = '?', 
+		stockDataBrowse = '?', 
+		stockDataEdit = '?', 
+		productNumberBrowse = '?', 
+		productNumberEdit = '?', 
+		deliverySlipBrowse = '?', 
+		deliverySlipEdit = '?', 
+		clientPageEdit = '?', 
+		constructionPageEdit = '?', 
+		constructionPageCopyEdit = '?', 
+		constructionPageDeleteEdit = '?', 
+		constructionSearchEdit = '?', 
+		clientSearchEdit = '?', 
+		aggregatedDataEdit = '?', 
+		masterDataEdit = '?', 
+		estimateEdit = '?', 
+		personApplicableEdit = '?', 
+		administratorEdit = '?', 
+		basicInfomationListBrowse = '?', 
+		basicInfomationListEdit = '?', 
+		sellAccountingBrowse = '?', 
+		sellAccountingEdit = '?', 
+		purchaseAcconuntingBrowse = '?', 
+		purchaseAcconuntingEdit = '?', 
+		purchaseOrderBrowse = '?', 
+		purchaseOrderEdit = '?', 
+		staffDataBrowse = '?', 
+		staffDataEdit = '?', 
+		staffDataLv2Browse = '?', 
+		staffDataLv2Edit = '?', 
+		staffDataLv3Browse = '?', 
+		staffDataLv3Edit = '?', 
+		advanceMoneyBrowse = '?', 
+		advanceMoneyEdit = '?', 
+		orderRequestBrowse = '?', 
+		orderRequestEdit = '?', 
+		billBrowse = '?', 
+		billEdit = '?', 
+		accountsReceivablePriceBrowse = '?', 
+		accountsReceivablePriceEdit = '?', 
+		unpaidBrowse = '?', 
+		unpaidEdit = '?', 
+		orderHistoryBrowse = '?', 
+		orderHistoryEdit = '?', 
+		accountsPayablePriceBrowse = '?', 
+		accountsPayablePriceEdit = '?', 
+		constructionInfoBrowse = '?', 
+		constructionInfoEdit = '?', 
+		constructionEstimateBrowse = '?', 
+		constructionEstimateEdit = '?', 
+		integrationDataBrowse = '?', 
+		integrationDataEdit = '?', 
+		integrationFormBrowse = '?', 
+		integrationFormEdit = '?', 
+		expectedCostBrowse = '?', 
+		expectedCostEdit = '?', 
+		constructionOrderBrowse = '?', 
+		constructionOrderEdit = '?', 
+		reportListBrowse = '?', 
+		reportListEdit = '?', 
+		constructionCostBrowse = '?', 
+		constructionCostEdit = '?', 
+		executionCostBrowse = '?', 
+		executionCostEdit = '?', 
+		billingBrowse = '?', 
+		billingEdit = '?', 
+		paymentProccessBrowse = '?', 
+		paymentProccessEdit = '?', 
+		paymentScheduleBrowse = '?', 
+		paymentScheduleEdit = '?', 
+		accountsReceivableBrowse = '?', 
+		accountsReceivableEdit = '?', 
+		invoiceProcessBrowse = '?', 
+		invoiceProcessEdit = '?', 
+		paymentProcessBrowse = '?', 
+		paymentProcessEdit = '?', 
+		expensesBrowse = '?', 
+		expensesEdit = '?', 
+		paymentSchedule2Browse = '?', 
+		paymentSchedule2Edit = '?', 
+		accountsPayableBrowse = '?', 
+		accountsPayableEdit = '?', 
+		workInProcessBrowse = '?', 
+		workInProcessEdit = '?', 
+		accountActivityBrowse = '?', 
+		accountActivityEdit = '?', 
+		update_staffID = '?', 
+		update_date = '?' 
+		WHERE staffID = '?';
+		]]>
+		</sql>
+
+		<template type="index">staff/contents_index_index.tpl</template>
+		<template type="edit">staff/contents_edit_index.tpl</template>
+
+	</table>
+
+	<table name="company" alias="企業" manage_type="table">
+
+		<sql type="count_company">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMcompany 
+		WHERE status = '?' 
+		]]>
+		</sql>
+
+		<sql type="count_company_officialName">
+		<![CDATA[
+		AND officialName LIKE '?' 
+		]]>
+		</sql>
+
+		<sql type="select_company">
+		<![CDATA[
+		SELECT 
+		A001.*, 
+		DATE_FORMAT(A001.regist_date, '%Y/%m/%d') AS regist_date_format, 
+		DATE_FORMAT(A001.update_date, '%Y/%m/%d') AS update_date_format, 
+		A002.name AS regist_name, 
+		A003.name AS update_name 
+		FROM GUMcompany AS A001 
+		LEFT OUTER JOIN GUMstaff AS A002 ON A001.regist_staffID = A002.staffID 
+		LEFT OUTER JOIN GUMstaff AS A003 ON A001.update_staffID = A003.staffID 
+		WHERE A001.status = '?' 
+		]]>
+		</sql>
+
+		<sql type="select_company_officialName">
+		<![CDATA[
+		AND A001.officialName LIKE '?' 
+		]]>
+		</sql>
+
+		<sql type="select_company_id">
+		<![CDATA[
+		SELECT 
+		A001.*, 
+		DATE_FORMAT(A001.regist_date, '%Y/%m/%d') AS regist_date_format, 
+		DATE_FORMAT(A001.update_date, '%Y/%m/%d') AS update_date_format, 
+		A002.name AS regist_name, 
+		A003.name AS update_name 
+		FROM GUMcompany AS A001 
+		LEFT OUTER JOIN GUMstaff AS A002 ON A001.regist_staffID = A002.staffID 
+		LEFT OUTER JOIN GUMstaff AS A003 ON A001.update_staffID = A003.staffID 
+		WHERE A001.codeNumber = '?' AND A001.status = '?';
+		]]>
+		</sql>
+
+		<sql type="company_id_check">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMcompany 
+		WHERE codeNumber = '?' AND status = '?';
+		]]>
+		</sql>
+
+		<sql type="insert_company">
+		<![CDATA[
+		INSERT INTO GUMcompany (
+			officialName, 
+			codeNumber, 
+			constructionStates, 
+			clientNameInSystem, 
+			note, 
+			regist_staffID, 
+			update_staffID,
+			regist_date, 
+			update_date,
+			status 
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?' 
+		);
+		]]>
+		</sql>
+
+		<sql type="update_company">
+		<![CDATA[
+		UPDATE GUMcompany SET 
+		officialName = '?', 
+		codeNumber = '?', 
+		constructionStates = '?', 
+		clientNameInSystem = '?', 
+		note = '?', 
+		update_staffID = '?', 
+		update_date = '?' 
+		WHERE codeNumber = '?';
+		]]>
+		</sql>
+
+		<sql type="delete_company">
+		<![CDATA[
+		UPDATE GUMcompany SET 
+		status = '?', 
+		update_staffID = '?', 
+		update_date = '?' 
+		WHERE codeNumber = '?';
+		]]>
+		</sql>
+
+		<template type="index">company/contents_index_index.tpl</template>
+
+	</table>
+
+	<table name="client" alias="取引先" manage_type="table">
+
+		<sql type="client_id_check">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMclient 
+		WHERE codeNumber = '?' AND officeCode = '?' AND status = '?';
+		]]>
+		</sql>
+
+		<sql type="insert_client">
+		<![CDATA[
+		INSERT INTO GUMclient (
+			codeNumber, 
+			office, 
+			noOffice, 
+			officeCode, 
+			takeConstructionOrder, 
+			sellingMaterials, 
+			orderMaterials, 
+			orderConstruction, 
+			searchBox, 
+			regist_staffID, 
+			update_staffID,
+			regist_date, 
+			update_date,
+			status 
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?' 
+		);
+		]]>
+		</sql>
+
+		<sql type="update_client">
+		<![CDATA[
+		UPDATE GUMclient SET 
+		office = '?', 
+		noOffice = '?', 
+		takeConstructionOrder = '?', 
+		sellingMaterials = '?', 
+		orderMaterials = '?', 
+		orderConstruction = '?', 
+		searchBox = '?', 
+		update_staffID = '?', 
+		update_date = '?' 
+		WHERE codeNumber = '?' AND officeCode = '?';
+		]]>
+		</sql>
+
+		<sql type="delete_client">
+		<![CDATA[
+		UPDATE GUMclient SET 
+		status = '?', 
+		update_staffID = '?', 
+		update_date = '?' 
+		WHERE codeNumber = '?' AND officeCode = '?';
+		]]>
+		</sql>
+
+		<sql type="select_client_id">
+		<![CDATA[
+		SELECT 
+		A001.*, 
+		A002.codeNumber, 
+		A002.clientNameInSystem 
+		FROM GUMclient AS A001 
+		INNER JOIN GUMcompany AS A002 ON A001.codeNumber = A002.codeNumber 
+		WHERE A001.codeNumber = '?' AND A001.officeCode = '?' AND A001.status = '?' AND A002.status = '?';
+		]]>
+		</sql>
+
+		<sql type="select_client_base">
+		<![CDATA[
+		SELECT 
+		* 
+		FROM GUTclientBase 
+		WHERE codeNumber = '?' AND officeCode = '?' AND status = '?';
+		]]>
+		</sql>
+
+		<sql type="insert_client_base">
+		<![CDATA[
+		INSERT INTO GUTclientBase (
+			codeNumber, 
+			officeCode, 
+			clientState, 
+			dealInfo, 
+			representative, 
+			contract, 
+			postcodeFirstHalf, 
+			postcodeLastHalf, 
+			address, 
+			buildingName, 
+			phoneNumberAreaCode, 
+			phoneNumberFirstHalf, 
+			phoneNumberLastHalf, 
+			faxNumberAreaCode, 
+			faxNumberFirstHalf, 
+			faxNumberLastHalf, 
+			presidentEMail, 
+			presidentName, 
+			shareCapital, 
+			construction, 
+			addressRemarks, 
+			remarks, 
+			clientRepresentative1, 
+			department1, 
+			role1, 
+			repPhoneNumerAreaCode1, 
+			repPhoneNumerFirstHalf1, 
+			repPhoneNumerLastHalf1, 
+			repEmail1, 
+			clientRepresentative2, 
+			department2, 
+			role2, 
+			repPhoneNumerAreaCode2, 
+			repPhoneNumerFirstHalf2, 
+			repPhoneNumerLastHalf2, 
+			repEmail2, 
+			clientRepresentative3, 
+			department3, 
+			role3, 
+			repPhoneNumerAreaCode3, 
+			repPhoneNumerFirstHalf3, 
+			repPhoneNumerLastHalf3, 
+			repEmail3, 
+			clientRepresentative4, 
+			department4, 
+			role4, 
+			repPhoneNumerAreaCode4, 
+			repPhoneNumerFirstHalf4, 
+			repPhoneNumerLastHalf4, 
+			repEmail4, 
+			clientRepresentative5, 
+			department5, 
+			role5, 
+			repPhoneNumerAreaCode5, 
+			repPhoneNumerFirstHalf5, 
+			repPhoneNumerLastHalf5, 
+			repEmail5, 
+			regist_staffID, 
+			update_staffID, 
+			regist_date, 
+			update_date, 
+			status 
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?' 
+		);
+		]]>
+		</sql>
+
+		<sql type="update_client_base">
+		<![CDATA[
+		UPDATE GUTclientBase SET 
+		clientState = '?', 
+		dealInfo = '?', 
+		representative = '?', 
+		contract = '?', 
+		postcodeFirstHalf = '?', 
+		postcodeLastHalf = '?', 
+		address = '?', 
+		buildingName = '?', 
+		phoneNumberAreaCode = '?', 
+		phoneNumberFirstHalf = '?', 
+		phoneNumberLastHalf = '?', 
+		faxNumberAreaCode = '?', 
+		faxNumberFirstHalf = '?', 
+		faxNumberLastHalf = '?', 
+		presidentEMail = '?', 
+		presidentName = '?', 
+		shareCapital = '?', 
+		construction = '?', 
+		addressRemarks = '?', 
+		remarks = '?', 
+		clientRepresentative1 = '?', 
+		department1 = '?', 
+		role1 = '?', 
+		repPhoneNumerAreaCode1 = '?', 
+		repPhoneNumerFirstHalf1 = '?', 
+		repPhoneNumerLastHalf1 = '?', 
+		repEmail1 = '?', 
+		clientRepresentative2 = '?', 
+		department2 = '?', 
+		role2 = '?', 
+		repPhoneNumerAreaCode2 = '?', 
+		repPhoneNumerFirstHalf2 = '?', 
+		repPhoneNumerLastHalf2 = '?', 
+		repEmail2 = '?', 
+		clientRepresentative3 = '?', 
+		department3 = '?', 
+		role3 = '?', 
+		repPhoneNumerAreaCode3 = '?', 
+		repPhoneNumerFirstHalf3 = '?', 
+		repPhoneNumerLastHalf3 = '?', 
+		repEmail3 = '?', 
+		clientRepresentative4 = '?', 
+		department4 = '?', 
+		role4 = '?', 
+		repPhoneNumerAreaCode4 = '?', 
+		repPhoneNumerFirstHalf4 = '?', 
+		repPhoneNumerLastHalf4 = '?', 
+		repEmail4 = '?', 
+		clientRepresentative5 = '?', 
+		department5 = '?', 
+		role5 = '?', 
+		repPhoneNumerAreaCode5 = '?', 
+		repPhoneNumerFirstHalf5 = '?', 
+		repPhoneNumerLastHalf5 = '?', 
+		repEmail5 = '?', 
+		update_staffID = '?', 
+		update_date = '?' 
+		WHERE codeNumber = '?' AND officeCode = '?';
+		]]>
+		</sql>
+
+		<sql type="select_client_hanbai_keiri">
+		<![CDATA[
+		SELECT 
+		* 
+		FROM GUTclientHanbaiKeiri 
+		WHERE codeNumber = '?' AND officeCode = '?' AND status = '?';
+		]]>
+		</sql>
+
+		<sql type="insert_client_hanbai_keiri">
+		<![CDATA[
+		INSERT INTO GUTclientHanbaiKeiri (
+			codeNumber, 
+			officeCode, 
+			broughtForwardAccountsRecprice, 
+			havingOrNotBill, 
+			remarks, 
+			sameAddress, 
+			postcodeFirstHalf, 
+			postcodeLastHalf, 
+			address, 
+			buildingName, 
+			phoneNumberAreaCode1, 
+			phoneNumberFirstHalf1, 
+			phoneNumberLastHalf1, 
+			faxNumberAreaCode1, 
+			faxNumberFirstHalf1, 
+			faxNumberLastHalf1, 
+			numberOfPayment, 
+			cutoffDate01, 
+			paymentMonth01, 
+			payDay01, 
+			other01, 
+			otherInput01, 
+			contractMustReach01, 
+			cutoffDate02, 
+			paymentMonth02, 
+			payDay02, 
+			other02, 
+			otherInput02, 
+			contractMustReach02, 
+			cutoffDate03, 
+			paymentMonth03, 
+			payDay03, 
+			other03, 
+			otherInput03, 
+			contractMustReach03, 
+			bankTransfer, 
+			collectingMoney, 
+			cash, 
+			cashRate, 
+			paycheck, 
+			paycheckRate, 
+			bill, 
+			billRate, 
+			paymentOther, 
+			paymentOtherInput, 
+			paymentAtSight, 
+			mutualAidMoney, 
+			havingOrNotContract, 
+			contractShippingMethod, 
+			remarksAboutBilling, 
+			offset01, 
+			price1, 
+			offset02, 
+			price2, 
+			offset03, 
+			price3, 
+			offset04, 
+			price4, 
+			offset05, 
+			price5, 
+			offset06, 
+			price6, 
+			offset07, 
+			price7, 
+			offset08, 
+			price8, 
+			offset09, 
+			price9, 
+			offset10, 
+			price10, 
+			regist_staffID, 
+			update_staffID, 
+			regist_date, 
+			update_date, 
+			status 
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?' 
+		);
+		]]>
+		</sql>
+
+		<sql type="update_client_hanbai_keiri">
+		<![CDATA[
+		UPDATE GUTclientHanbaiKeiri SET 
+		broughtForwardAccountsRecprice = '?', 
+		havingOrNotBill = '?', 
+		remarks = '?', 
+		sameAddress = '?', 
+		postcodeFirstHalf = '?', 
+		postcodeLastHalf = '?', 
+		address = '?', 
+		buildingName = '?', 
+		phoneNumberAreaCode1 = '?', 
+		phoneNumberFirstHalf1 = '?', 
+		phoneNumberLastHalf1 = '?', 
+		faxNumberAreaCode1 = '?', 
+		faxNumberFirstHalf1 = '?', 
+		faxNumberLastHalf1 = '?', 
+		numberOfPayment = '?', 
+		cutoffDate01 = '?', 
+		paymentMonth01 = '?', 
+		payDay01 = '?', 
+		other01 = '?', 
+		otherInput01 = '?', 
+		contractMustReach01 = '?', 
+		cutoffDate02 = '?', 
+		paymentMonth02 = '?', 
+		payDay02 = '?', 
+		other02 = '?', 
+		otherInput02 = '?', 
+		contractMustReach02 = '?', 
+		cutoffDate03 = '?', 
+		paymentMonth03 = '?', 
+		payDay03 = '?', 
+		other03 = '?', 
+		otherInput03 = '?', 
+		contractMustReach03 = '?', 
+		bankTransfer = '?', 
+		collectingMoney = '?', 
+		cash = '?', 
+		cashRate = '?', 
+		paycheck = '?', 
+		paycheckRate = '?', 
+		bill = '?', 
+		billRate = '?', 
+		paymentOther = '?', 
+		paymentOtherInput = '?', 
+		paymentAtSight = '?', 
+		mutualAidMoney = '?', 
+		havingOrNotContract = '?', 
+		contractShippingMethod = '?', 
+		remarksAboutBilling = '?', 
+		offset01 = '?', 
+		price1 = '?', 
+		offset02 = '?', 
+		price2 = '?', 
+		offset03 = '?', 
+		price3 = '?', 
+		offset04 = '?', 
+		price4 = '?', 
+		offset05 = '?', 
+		price5 = '?', 
+		offset06 = '?', 
+		price6 = '?', 
+		offset07 = '?', 
+		price7 = '?', 
+		offset08 = '?', 
+		price8 = '?', 
+		offset09 = '?', 
+		price9 = '?', 
+		offset10 = '?', 
+		price10 = '?', 
+		update_staffID = '?', 
+		update_date = '?' 
+		WHERE codeNumber = '?' AND officeCode = '?';
+		]]>
+		</sql>
+
+		<sql type="select_client_shiire_keiri">
+		<![CDATA[
+		SELECT 
+		* 
+		FROM GUTclientShiireKeiri 
+		WHERE codeNumber = '?' AND officeCode = '?' AND status = '?';
+		]]>
+		</sql>
+
+		<sql type="insert_client_shiire_keiri">
+		<![CDATA[
+		INSERT INTO GUTclientShiireKeiri (
+			codeNumber, 
+			officeCode, 
+			broughtForwardAccountsReceivable, 
+			remarks, 
+			sameAddress, 
+			postcodeFirstHalf, 
+			postcodeLastHalf, 
+			address, 
+			buildingName, 
+			phoneNumberAreaCode1, 
+			phoneNumberFirstHalf1, 
+			phoneNumberLastHalf1, 
+			faxNumberAreaCode1, 
+			faxNumberFirstHalf1, 
+			faxNumberLastHalf1, 
+			numberOfPayment, 
+			cutoffDate01, 
+			paymentMonth01, 
+			payDay01, 
+			other01, 
+			otherInput01, 
+			financialInstitution, 
+			branchName, 
+			typeOfAccount, 
+			accountNumber, 
+			accountHolder, 
+			accountRemarks, 
+			havingOrNotMutualAid, 
+			mutualAidMoney, 
+			defaultBill, 
+			offset01, 
+			price1, 
+			offset02, 
+			price2, 
+			offset03, 
+			price3, 
+			offset04, 
+			price4, 
+			offset05, 
+			price5, 
+			offset06, 
+			price6, 
+			offset07, 
+			price7, 
+			offset08, 
+			price8, 
+			offset09, 
+			price9, 
+			offset10, 
+			price10, 
+			regist_staffID, 
+			update_staffID, 
+			regist_date, 
+			update_date, 
+			status 
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?' 
+		);
+		]]>
+		</sql>
+
+		<sql type="update_client_shiire_keiri">
+		<![CDATA[
+		UPDATE GUTclientShiireKeiri SET 
+		broughtForwardAccountsReceivable = '?', 
+		remarks = '?', 
+		sameAddress = '?', 
+		postcodeFirstHalf = '?', 
+		postcodeLastHalf = '?', 
+		address = '?', 
+		buildingName = '?', 
+		phoneNumberAreaCode1 = '?', 
+		phoneNumberFirstHalf1 = '?', 
+		phoneNumberLastHalf1 = '?', 
+		faxNumberAreaCode1 = '?', 
+		faxNumberFirstHalf1 = '?', 
+		faxNumberLastHalf1 = '?', 
+		numberOfPayment = '?', 
+		cutoffDate01 = '?', 
+		paymentMonth01 = '?', 
+		payDay01 = '?', 
+		other01 = '?', 
+		otherInput01 = '?', 
+		financialInstitution = '?', 
+		branchName = '?', 
+		typeOfAccount = '?', 
+		accountNumber = '?', 
+		accountHolder = '?', 
+		accountRemarks = '?', 
+		havingOrNotMutualAid = '?', 
+		mutualAidMoney = '?', 
+		defaultBill = '?', 
+		offset01 = '?', 
+		price1 = '?', 
+		offset02 = '?', 
+		price2 = '?', 
+		offset03 = '?', 
+		price3 = '?', 
+		offset04 = '?', 
+		price4 = '?', 
+		offset05 = '?', 
+		price5 = '?', 
+		offset06 = '?', 
+		price6 = '?', 
+		offset07 = '?', 
+		price7 = '?', 
+		offset08 = '?', 
+		price8 = '?', 
+		offset09 = '?', 
+		price9 = '?', 
+		offset10 = '?', 
+		price10 = '?', 
+		update_staffID = '?', 
+		update_date = '?' 
+		WHERE codeNumber = '?' AND officeCode = '?';
+		]]>
+		</sql>
+
+		<sql type="select_client_worker">
+		<![CDATA[
+		SELECT 
+		* 
+		FROM GUTclientWorker 
+		WHERE codeNumber = '?' AND officeCode = '?' AND workerFlg = '?' AND status = '?';
+		]]>
+		</sql>
+
+		<sql type="insert_client_worker">
+		<![CDATA[
+		INSERT INTO GUTclientWorker (
+			codeNumber, 
+			officeCode, 
+			workerFlg, 
+			workerNo, 
+			registrationNumber, 
+			name_Kanji, 
+			name_Kana, 
+			postcodeFirstHalf, 
+			postcodeLastHalf, 
+			address, 
+			buildingName, 
+			phoneNumberAreaCode, 
+			phoneNumberFirstHalf, 
+			phoneNumberLastHalf, 
+			faxNumberAreaCode, 
+			faxNumberFirstHalf, 
+			faxNumberLastHalf, 
+			eMail, 
+			dateOfBirthYear, 
+			dateOfBirthMonth, 
+			dateOfBirthDay, 
+			age, 
+			bloodType, 
+			emergencyName_Kanji, 
+			emergencyName_Kana, 
+			relationship, 
+			emergencyPhoneNumberAreaCode, 
+			emergencyPhoneNumberFirstHalf, 
+			emergencyPhoneNumberLastHalf, 
+			remarks, 
+			registrationYear, 
+			registrationMonth, 
+			registrationDay, 
+			representative, 
+			workersUnion, 
+			compensationInsuranceNumber, 
+			nationalHealthInsurance, 
+			nationalHealthInsuranceNumber, 
+			pensionInsurance, 
+			pensionNumber, 
+			unemploymentInsuranceNumber, 
+			scaffoldWorkersNumber, 
+			other1, 
+			other2, 
+			latestCheckupYear, 
+			latestCheckupMonth, 
+			latestCheckupDay, 
+			bloodPressureHigher, 
+			bloodPressureLower, 
+			other, 
+			constructionType1_1, 
+			constructionType1_2, 
+			yearsOfExperience1, 
+			constructionType2_1, 
+			constructionType2_2, 
+			yearsOfExperience2, 
+			constructionType3_1, 
+			constructionType3_2, 
+			yearsOfExperience3, 
+			constructionType4_1, 
+			constructionType4_2, 
+			yearsOfExperience4, 
+			constructionType5_1, 
+			constructionType5_2, 
+			yearsOfExperience5, 
+			constructionType6_1, 
+			constructionType6_2, 
+			yearsOfExperience6, 
+			constructionType7_1, 
+			constructionType7_2, 
+			yearsOfExperience7, 
+			constructionType8_1, 
+			constructionType8_2, 
+			yearsOfExperience8, 
+			regist_staffID, 
+			update_staffID, 
+			regist_date, 
+			update_date, 
+			status 
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?' 
+		);
+		]]>
+		</sql>
+
+		<sql type="update_client_worker">
+		<![CDATA[
+		UPDATE GUTclientWorker SET 
+		workerFlg  = '?', 
+		workerNo  = '?', 
+		registrationNumber  = '?', 
+		name_Kanji  = '?', 
+		name_Kana  = '?', 
+		postcodeFirstHalf  = '?', 
+		postcodeLastHalf  = '?', 
+		address  = '?', 
+		buildingName  = '?', 
+		phoneNumberAreaCode  = '?', 
+		phoneNumberFirstHalf  = '?', 
+		phoneNumberLastHalf  = '?', 
+		faxNumberAreaCode  = '?', 
+		faxNumberFirstHalf  = '?', 
+		faxNumberLastHalf  = '?', 
+		eMail  = '?', 
+		dateOfBirthYear  = '?', 
+		dateOfBirthMonth  = '?', 
+		dateOfBirthDay  = '?', 
+		age  = '?', 
+		bloodType  = '?', 
+		emergencyName_Kanji  = '?', 
+		emergencyName_Kana  = '?', 
+		relationship  = '?', 
+		emergencyPhoneNumberAreaCode  = '?', 
+		emergencyPhoneNumberFirstHalf  = '?', 
+		emergencyPhoneNumberLastHalf  = '?', 
+		remarks  = '?', 
+		registrationYear  = '?', 
+		registrationMonth  = '?', 
+		registrationDay  = '?', 
+		representative  = '?', 
+		workersUnion  = '?', 
+		compensationInsuranceNumber  = '?', 
+		nationalHealthInsurance  = '?', 
+		nationalHealthInsuranceNumber  = '?', 
+		pensionInsurance  = '?', 
+		pensionNumber  = '?', 
+		unemploymentInsuranceNumber  = '?', 
+		scaffoldWorkersNumber  = '?', 
+		other1  = '?', 
+		other2  = '?', 
+		latestCheckupYear  = '?', 
+		latestCheckupMonth  = '?', 
+		latestCheckupDay  = '?', 
+		bloodPressureHigher  = '?', 
+		bloodPressureLower  = '?', 
+		other  = '?', 
+		constructionType1_1  = '?', 
+		constructionType1_2  = '?', 
+		yearsOfExperience1  = '?', 
+		constructionType2_1  = '?', 
+		constructionType2_2  = '?', 
+		yearsOfExperience2  = '?', 
+		constructionType3_1  = '?', 
+		constructionType3_2  = '?', 
+		yearsOfExperience3  = '?', 
+		constructionType4_1  = '?', 
+		constructionType4_2  = '?', 
+		yearsOfExperience4  = '?', 
+		constructionType5_1  = '?', 
+		constructionType5_2  = '?', 
+		yearsOfExperience5  = '?', 
+		constructionType6_1  = '?', 
+		constructionType6_2  = '?', 
+		yearsOfExperience6  = '?', 
+		constructionType7_1  = '?', 
+		constructionType7_2  = '?', 
+		yearsOfExperience7  = '?', 
+		constructionType8_1  = '?', 
+		constructionType8_2  = '?', 
+		yearsOfExperience8  = '?', 
+		update_staffID  = '?', 
+		update_date  = '?' 
+		WHERE codeNumber = '?' AND officeCode = '?';
+		]]>
+		</sql>
+
+		<sql type="delete_client_worker_all">
+		<![CDATA[
+		UPDATE GUTclientWorker SET 
+		status = '?' 
+		WHERE codeNumber = '?' AND officeCode = '?' AND workerFlg = '?';
+		]]>
+		</sql>
+
+		<sql type="select_tatekae_id">
+		<![CDATA[
+		SELECT 
+		* 
+		FROM GUTclientTatekae 
+		WHERE tatekaeId = '?' AND codeNumber = '?' AND officeCode = '?' AND status = '?';
+		]]>
+		</sql>
+
+		<sql type="insert_client_tatekae">
+		<![CDATA[
+		INSERT INTO GUTclientTatekae (
+			codeNumber , 
+			officeCode , 
+			yearStart , 
+			monthStart , 
+			dayStart , 
+			cashAdvance , 
+			payment , 
+			numberOfPayment , 
+			remarkAndDetail , 
+			processStatus , 
+			regist_staffID , 
+			update_staffID , 
+			regist_date , 
+			update_date , 
+			status 
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?' 
+		);
+		]]>
+		</sql>
+
+		<sql type="update_client_tatekae">
+		<![CDATA[
+		UPDATE GUTclientTatekae SET 
+		yearStart  = '?', 
+		monthStart  = '?', 
+		dayStart  = '?', 
+		cashAdvance  = '?', 
+		payment  = '?', 
+		numberOfPayment  = '?', 
+		remarkAndDetail  = '?', 
+		update_staffID  = '?', 
+		update_date  = '?' 
+		WHERE tatekaeId = '?' AND codeNumber = '?' AND officeCode = '?';
+		]]>
+		</sql>
+
+		<sql type="count_tatekae">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUTclientTatekae AS A001 
+		WHERE A001.codeNumber = '?' AND A001.officeCode = '?' AND A001.status = '?' 
+		]]>
+		</sql>
+
+		<sql type="select_tatekae">
+		<![CDATA[
+		SELECT 
+		A001.*, 
+		A002.name AS name_regist, 
+		A003.name AS name_process, 
+		A004.name AS name_cashAdvance, 
+		A005.name AS name_numberOfPayment 
+		FROM GUTclientTatekae AS A001 
+		LEFT OUTER JOIN GUMstaff AS A002 ON A001.regist_staffID = A002.staffID 
+		LEFT OUTER JOIN GUMstaff AS A003 ON A001.process_staffID = A003.staffID 
+		LEFT OUTER JOIN GUMmaster AS A004 ON A001.cashAdvance = A004.masterId AND A004.status = '1' 
+		LEFT OUTER JOIN GUMmaster AS A005 ON A001.numberOfPayment = A005.masterId AND A005.status = '1' 
+		WHERE A001.codeNumber = '?' AND A001.officeCode = '?' AND A001.status = '?' 
+		]]>
+		</sql>
+
+		<sql type="select_tatekae_cashAdvance">
+		<![CDATA[
+		AND A001.cashAdvance = '?' 
+		]]>
+		</sql>
+
+		<sql type="select_tatekae_processStatus">
+		<![CDATA[
+		AND A001.processStatus = '?' 
+		]]>
+		</sql>
+
+		<sql type="select_tatekae_numberOfPayment">
+		<![CDATA[
+		AND A001.numberOfPayment = '?' 
+		]]>
+		</sql>
+
+		<sql type="select_tatekae_startDate">
+		<![CDATA[
+		AND CONCAT (A001.yearStart,LPAD(A001.monthStart,2,'0'),LPAD(A001.dayStart,2,'0')) >= '?' 
+		]]>
+		</sql>
+
+		<sql type="select_tatekae_endDate">
+		<![CDATA[
+		AND CONCAT (A001.yearStart,LPAD(A001.monthStart,2,'0'),LPAD(A001.dayStart,2,'0')) <= '?' 
+		]]>
+		</sql>
+
+
+		<template type="index">client/contents_index_index.tpl</template>
+		<template type="hanbai_keiri">client/contents_hanbai-keiri_index.tpl</template>
+		<template type="shiire_keiri">client/contents_shiire-keiri_index.tpl</template>
+		<template type="worker_index">client/worker/contents_index_index.tpl</template>
+		<template type="tatekae_index">client/tatekae/contents_index_index.tpl</template>
+		<template type="tatekae_tatekaekin">client/tatekae/contents_tatekaekin_index.tpl</template>
+
+	</table>
+
+	<table name="client_search" alias="取引先検索" manage_type="table">
+
+		<sql type="count_client">
+		<![CDATA[
+		SELECT 
+		count(*) AS cnt 
+		FROM GUMclient AS A001 
+		INNER JOIN GUMcompany AS A002 ON A001.codeNumber = A002.codeNumber 
+		WHERE A001.status = '?' AND A002.status = '?' 
+		]]>
+		</sql>
+
+		<sql type="select_client">
+		<![CDATA[
+		SELECT 
+		A001.*, 
+		A002.clientNameInSystem, 
+		A003.clientState, 
+		A003.dealInfo, 
+		A003.representative, 
+		A004.name 
+		FROM GUMclient AS A001 
+		INNER JOIN GUMcompany AS A002 ON A001.codeNumber = A002.codeNumber 
+		LEFT OUTER JOIN GUTclientBase AS A003 ON A001.codeNumber = A003.codeNumber AND A001.officeCode = A003.officeCode AND A003.status = '1' 
+		LEFT OUTER JOIN GUMstaff AS A004 ON A003.representative = A004.staffID AND A004.status = '1' 
+		WHERE A001.status = '?' AND A002.status = '?' 
+		]]>
+		</sql>
+
+		<sql type="select_client_officialName">
+		<![CDATA[
+		AND (CONCAT(A002.officialName, A001.codeNumber, A001.officeCode, A001.office, A001.searchBox) LIKE '?') 
+		]]>
+		</sql>
+
+		<sql type="select_client_dealstate">
+		<![CDATA[
+		AND A003.clientState = '?' 
+		]]>
+		</sql>
+
+		<sql type="select_client_dealtype">
+		<![CDATA[
+		AND A003.dealInfo = '?' 
+		]]>
+		</sql>
+
+		<template type="index">client_search/contents_index_index.tpl</template>
+
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table name="master_edit" alias="マスター管理" manage_type="table">
+
+		<sql type="select_master">
+		<![CDATA[
+		SELECT 
+		* 
+		FROM GUMmaster 
+		WHERE masterCategory = '?' AND status = '?';
+		]]>
+		</sql>
+
+		<sql type="insert_master_base">
+		<![CDATA[
+		INSERT INTO GUMmaster (
+			masterCategory, 
+			masterSubCategory, 
+			name, 
+			delFlg, 
+			regist_staffID, 
+			update_staffID, 
+			regist_date, 
+			update_date, 
+			status 
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?' 
+		);
+		]]>
+		</sql>
+
+		<sql type="insert_master_sub">
+		<![CDATA[
+		INSERT INTO GUMmaster (
+			masterCategory, 
+			masterSubCategory, 
+			name, 
+			nameSub1, 
+			nameSub2, 
+			nameSub3, 
+			nameSub4, 
+			nameSub5, 
+			nameSub6, 
+			delFlg, 
+			regist_staffID, 
+			update_staffID, 
+			regist_date, 
+			update_date, 
+			status 
+		) VALUES (
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?', 
+			'?' 
+		);
+		]]>
+		</sql>
+
+		<sql type="update_master_base">
+		<![CDATA[
+		UPDATE GUMmaster SET 
+		masterCategory = '?', 
+		masterSubCategory = '?', 
+		name = '?', 
+		delFlg = '?', 
+		update_staffID = '?', 
+		update_date = '?', 
+		WHERE masterId = '?';
+		]]>
+		</sql>
+
+		<sql type="update_master_sub">
+		<![CDATA[
+		UPDATE GUMmaster SET 
+		masterCategory = '?', 
+		masterSubCategory = '?', 
+		name = '?', 
+		nameSub1 = '?', 
+		nameSub2 = '?', 
+		nameSub3 = '?', 
+		nameSub4 = '?', 
+		nameSub5 = '?', 
+		nameSub6 = '?', 
+		delFlg = '?', 
+		update_staffID = '?', 
+		update_date = '?', 
+		WHERE masterId = '?';
+		]]>
+		</sql>
+
+		<sql type="delete_master">
+		<![CDATA[
+		UPDATE GUMmaster SET 
+		status = '?', 
+		update_staffID = '?', 
+		update_date = '?', 
+		WHERE masterId = '?';
+		]]>
+		</sql>
+
+		<template type="index">master-edit/contents_index_index.tpl</template>
+		<template type="index02_101">master-edit/contents_index02_101_index.tpl</template>
+
+	</table>
+
+</table_list>
+</manage>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<management_list>
+	<manage name="master" alias="マスタ管理" id="1" />
+</management_list>

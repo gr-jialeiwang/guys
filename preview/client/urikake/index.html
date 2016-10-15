@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>売掛情報：Guy's System</title>
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/page.css">
+<link rel="stylesheet" href="../../css/print.css" media="print">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../../js/function.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="container">
+				<h1 id="logo"><a href="../../top.php"><img src="../../img/common/logo_header.png" height="39" width="166" alt="GUY’S COMPANY Oparation Management System"></a></h1>
+				<div class="boxRight">
+					<a href="../../index.php">ログアウト</a>
+					<a href="#" id="menuBtn"><img src="../../img/common/btn_menu.png" alt="メニューボタン"></a>
+				</div>
+			</div>
+			<nav id="gNav">
+				<ul>
+					<li><a href="../../top.php">ホーム</a></li>
+					<li><a href="../../keiri/index.php">経理処理Top</a></li>
+					<li><a href="../../in-house_order/index.php">自社発注</a></li>
+					<li><a href="../../preceding_order/index.php">先行発注</a></li>
+					<li><a href="../../hinban/index.php">品番登録・編集</a></li>
+					<li><a href="../../staff/index.php">社員一覧/登録・編集</a></li>
+					<li><a href="../../company/index.php">企業一覧/登録・編集</a></li>
+					<li class="current">取引先ページ新規作成</li>
+					<li><a href="../../master-edit/index.php">各種マスタ編集</a></li>
+				</ul>
+			</nav>
+		</header>
+		<form action="index.php" method="POST">
+			<section class="pageTop">
+				<div class="container">
+					<div class="pageTitle clearfix">
+						<div class="boxLeft mr8">
+							<div class="btnBack"><a href="../index.php">戻る</a></div>
+						</div>
+						<div class="boxLeft">
+							<h2>取引先／新規登録・編集</h2>
+						</div>
+						<div class="boxRight">
+							<p class="textAnchor resetClientData"><a href="#">この取引先を削除する</a></p>
+						</div>
+					</div>
+					<table class="tableA">
+						<tr>
+							<th class="w87">企業名</th>
+							<td>
+								<select name="company" class="w363">
+									<option>選択</option>
+									<option value=""></option>
+									<option value=""></option>
+								</select>
+							</td>
+							<th class="w63">事業所名</th>
+							<td colspan="3">
+								<ul class="horizontal">
+									<li class="mr7">
+										<input class="w326" name="office" type="text">
+									</li>
+									<li>
+									<div class="radioBtn">
+										<input type="radio" name="office" id="noOffice">
+										<label for="noOffice">事業所名なし</label>
+									</div>
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+					<table class="tableA">
+						<tr>
+							<th class="w87">事業所コード</th>
+							<td><input type="text" class="w135" name="officeCode" placeholder="000A00-00"></td>
+							<th>取引タイプ</th>
+							<td>
+								<ul class="horizontal">
+									<li class="mr10">
+										<div class="checkBox">
+											<input type="checkbox" id="dealType01" name="takeConstructionOrder">
+											<label for="dealType01">工事受注</label>
+										</div>
+									</li>
+									<li class="mr10">
+										<div class="checkBox">
+											<input type="checkbox" id="dealType02" name="sellingMaterials">
+											<label for="dealType02">材料販売</label>
+										</div>
+									</li>
+									<li class="mr10">
+										<div class="checkBox">
+											<input type="checkbox" id="dealType03" name="orderMaterials">
+											<label for="dealType03">材料発注</label>
+										</div>
+									</li>
+									<li>
+										<div class="checkBox">
+											<input type="checkbox" id="dealType04" name="orderConstruction">
+											<label for="dealType04">工事発注</label>
+										</div>
+									</li>
+								</ul>
+							</td>
+							<th>検索用テキスト</th>
+							<td><input type="text" name="searchBox" class="w216"></td>
+						</tr>
+					</table>
+					<div class="clearfix">
+						<div class="boxRight">
+							<button class="btnReload" type="button">登録・更新する</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="container">
+				<nav id="subNav">
+					<ul>
+						<li class="leftEnd"><a href="../index.php">基本情報</a></li>
+						<li><a href="../hanbai-keiri.php">販売系経理情報</a></li>
+						<li><a href="../shiire-keiri.php">仕入系経理情報</a></li>
+						<li><a href="../hacchu/index.php">発注書設定</a></li>
+						<li><a href="../worker/index.php">作業員情報</a></li>
+						<li class="rightEnd"><a href="../tatekae/index.php">立替金情報</a></li>
+						<li class="leftEnd"><a href="../request/index.php">依頼／受注履歴</a></li>
+						<li><a href="../seikyusho/index.php">請求書一覧</a></li>
+						<li class="currentLink"><a href="index.php">売掛金情報</a></li>
+						<li><a href="../minyukin/index.php">未入金・不足工事一覧</a></li>
+						<li><a href="../shiire-rireki/index.php">仕入／発注履歴</a></li>
+						<li class="rightEnd"><a href="../kaikake/index.php">買掛金情報</a></li>
+					</ul>
+				</nav>
+				<div class="searchFocusArea">
+					<table class="tableA3">
+						<tr>
+							<th class="pr0 w80">表示期間選択</th>
+							<td class="w401">
+								<div class="clearfix">
+									<div class="boxLeft">
+										<ul class="dateSortingArea horizontal">
+											<li>
+												<select name="yearStart" class="w105">
+													<option>年選択</option>
+													<option value="2016年">2016年</option>
+													<option value="2017年">2017年</option>
+													<option value="2018年">2018年</option>
+													<option value="2019年">2019年</option>
+													<option value="2020年">2020年</option>
+													<option value="2021年">2021年</option>
+													<option value="2022年">2022年</option>
+													<option value="2023年">2023年</option>
+													<option value="2024年">2024年</option>
+													<option value="2025年">2025年</option>
+												</select>
+												<select name="monthStart" class="w72">
+													<option>月選択</option>
+													<option value="1月">1月</option>
+													<option value="2月">2月</option>
+													<option value="3月">3月</option>
+													<option value="4月">4月</option>
+													<option value="5月">5月</option>
+													<option value="6月">6月</option>
+													<option value="7月">7月</option>
+													<option value="8月">8月</option>
+													<option value="9月">9月</option>
+													<option value="10月">10月</option>
+													<option value="11月">11月</option>
+													<option value="12月">12月</option>
+												</select>
+											</li>
+											<li class="divider">〜</li>
+											<li>
+												<select name="yearEnd" class="w105">
+													<option>年選択</option>
+													<option value="2016年">2016年</option>
+													<option value="2017年">2017年</option>
+													<option value="2018年">2018年</option>
+													<option value="2019年">2019年</option>
+													<option value="2020年">2020年</option>
+													<option value="2021年">2021年</option>
+													<option value="2022年">2022年</option>
+													<option value="2023年">2023年</option>
+													<option value="2024年">2024年</option>
+													<option value="2025年">2025年</option>
+												</select>
+												<select name="monthEnd" class="w72">
+													<option>月選択</option>
+													<option value="1月">1月</option>
+													<option value="2月">2月</option>
+													<option value="3月">3月</option>
+													<option value="4月">4月</option>
+													<option value="5月">5月</option>
+													<option value="6月">6月</option>
+													<option value="7月">7月</option>
+													<option value="8月">8月</option>
+													<option value="9月">9月</option>
+													<option value="10月">10月</option>
+													<option value="11月">11月</option>
+													<option value="12月">12月</option>
+												</select>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+							<th class="pr0 w70">表示方法1</th>
+							<td class="w110">
+								<select name="sortCondition1" class="w100p">
+									<option value="事業所単位">事業所単位</option>
+									<option value="企業単位">企業単位</option>
+								</select>
+							</td>
+							<th class="pr0 w70">表示方法2</th>
+							<td>
+								<select name="sortCondition2" class="w100p">
+									<option value="請求ベース">請求ベース</option>
+									<option value="完成・納品ベース">完成・納品ベース</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6" class="txtCenter">
+								<a href="urikake-joho.php" class="buttonA">上記で表示を絞り込む </a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</form>
+		<footer>© GUY’S COMPANY All Rights Reserved</footer>
+	</div>
+</body>
+</html>

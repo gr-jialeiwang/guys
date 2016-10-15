@@ -1,0 +1,209 @@
+<!--{if $view_flg1 == 0}-->
+	<div class="errorBox">
+		<p class="error">権限がありません。</p>
+	</div>
+<!--{else}-->
+	<!--{if is_array($arrForm.err_msg)}-->
+		<div class="errorBox">
+			<!--{foreach from=$arrForm.err_msg key=key item=value name=cnt}-->
+				<p class="error"><!--{$value}--></p>
+			<!--{/foreach}-->
+		</div>
+	<!--{else}-->
+		<!--{if is_array($arrForm.err_msg2)}-->
+			<div class="errorBox">
+				<!--{foreach from=$arrForm.err_msg2 key=key item=value name=cnt}-->
+					<p class="error"><!--{$value}--></p>
+				<!--{/foreach}-->
+			</div>
+		<!--{/if}-->
+		<form name="form1" action="?" method="POST">
+			<input type="hidden" name="mode" id="mode" value="<!--{$editMode}-->">
+			<input type="hidden" name="FN_codeNumberOrg" value="<!--{$codeNumber}-->">
+			<input type="hidden" name="FN_codeNumberDel" value="">
+			<section class="pageTop pb20 mb30">
+				<div class="container">
+					<div class="pageTitle clearfix">
+						<div class="boxLeft mr8">
+							<div class="btnBack"><a href="/">戻る</a></div>
+						</div>
+						<div class="boxLeft">
+							<h2>企業名 新規登録/編集</h2>
+						</div>
+						<!--{if $view_flg2 == 1}-->
+							<div class="boxRight disp_none" id="company_del_single">
+								<p class="textAnchor resetClientData"><a href="#" onclick="company_del_single();">この取引先を削除する</a></p>
+							</div>
+						<!--{/if}-->
+					</div>
+					<!--{if $view_flg2 == 1}-->
+						<table class="tableA">
+							<tr>
+								<th class="w130">正式名称</th>
+								<td>
+									<input type="text" name="officialName" class="w335" value="<!--{$select.officialName}-->">
+								</td>
+								<th class="w70">コードNo</th>
+								<td>
+									<input type="text" id="codeNumberText" class="w145" name="codeNumber" value="<!--{$select.codeNumber}-->">
+									<input type="hidden" id="codeNumberHidden" name="codeNumber" value="<!--{$select.codeNumber}-->" disabled="disabled">
+								</td>
+								<th>読みカナ分類</th>
+								<td>
+									<select name="constructionStates" class="w154">
+										<option value="ア"<!--{if $select.constructionStates == "ア"}--> selected<!--{/if}-->>ア</option>
+										<option value="カ"<!--{if $select.constructionStates == "カ"}--> selected<!--{/if}-->>カ</option>
+										<option value="サ"<!--{if $select.constructionStates == "サ"}--> selected<!--{/if}-->>サ</option>
+										<option value="タ"<!--{if $select.constructionStates == "タ"}--> selected<!--{/if}-->>タ</option>
+										<option value="ナ"<!--{if $select.constructionStates == "ナ"}--> selected<!--{/if}-->>ナ</option>
+										<option value="ハ"<!--{if $select.constructionStates == "ハ"}--> selected<!--{/if}-->>ハ</option>
+										<option value="マ"<!--{if $select.constructionStates == "マ"}--> selected<!--{/if}-->>マ</option>
+										<option value="ヤ"<!--{if $select.constructionStates == "ヤ"}--> selected<!--{/if}-->>ヤ</option>
+										<option value="ラ"<!--{if $select.constructionStates == "ラ"}--> selected<!--{/if}-->>ラ</option>
+										<option value="ワ"<!--{if $select.constructionStates == "ワ"}--> selected<!--{/if}-->>ワ</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+						<table class="tableA">
+							<tr>
+								<th class="w130">システム内 表示社名</th>
+								<td class="w238"><input type="text" name="clientNameInSystem" class="w234" value="<!--{$select.phoneNumerAreaCode}-->"></td>
+								<th class="w45">備考</th>
+								<td colspan="3"><input type="text" name="note" class="w100p" value="<!--{$select.phoneNumerAreaCode}-->"></td>
+							</tr>
+						</table>
+						<table class="tableA">
+							<tr>
+								<td class="txtCenter"><button class="buttonA buttonALarge" type="submit">上記で登録(修正)する</button></td>
+							</tr>
+						</table>
+					<!--{/if}-->
+				</div>
+			</section>
+		</form>
+		<form name="form2" action="?" method="GET">
+			<div class="container">
+				<div class="searchFocusArea">
+					<table class="tableA">
+						<tr>
+							<th>企業名検索</th>
+							<td>
+								<input type="text" name="searchClientName" class="inputType01 w238 mr7" value="<!--{$searchClientName}-->"><button class="btnSearch" type="submit">検索</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</form>
+		<div class="container">
+
+			<div class="headingB clearfix">
+				<h3 class="boxLeft">登録済み企業名</h3>
+				<div class="boxRight">
+					<div class="pagination">
+						<p class="resultStates"><!--{$countSelectQuery}-->件中<!--{$pagingArr.start_view}-->〜<!--{$pagingArr.end_view}-->件</p>
+						<ul class="paging">
+							<!--{if $pagingArr.p_cnt > 1 && $pagingArr.rev != ""}-->
+								<li class="toFirstPage"><a href="?page=1<!--{if $searchClientName != ""}-->&searchClientName=<!--{$searchClientName}--><!--{/if}-->" >最初へ</a></li>
+							<!--{/if}-->
+							<!--{if $pagingArr.rev != ""}-->
+								<li><a href="?page=<!--{$pagingArr.rev}--><!--{if $searchClientName != ""}-->&searchClientName=<!--{$searchClientName}--><!--{/if}-->" >&lt;&lt;</a></li>
+							<!--{/if}-->
+							<!--{section name=i start=$pagingArr.p_start loop=$pagingArr.p_end_plus}-->
+								<!--{if $pageNo == $smarty.section.i.index}-->
+									<li class="current"><!--{$smarty.section.i.index}--></li>
+								<!--{else}-->
+									<li><a href="?page=<!--{$smarty.section.i.index}--><!--{if $searchClientName != ""}-->&searchClientName=<!--{$searchClientName}--><!--{/if}-->"><!--{$smarty.section.i.index}--></a></li>
+								<!--{/if}-->
+							<!--{/section}-->
+							<!--{if $pagingArr.next != ""}-->
+								<li><a href="?page=<!--{$pagingArr.next}--><!--{if $searchClientName != ""}-->&searchClientName=<!--{$searchClientName}--><!--{/if}-->" >&gt;&gt;</a></li>
+							<!--{/if}-->
+							<!--{if $pagingArr.p_cnt > 1 && $pagingArr.next != ""}-->
+								<li class="toLastPage"><a href="?page=<!--{$pagingArr.p_cnt}--><!--{if $searchClientName != ""}-->&searchClientName=<!--{$searchClientName}--><!--{/if}-->" >最後へ</a></li>
+							<!--{/if}-->
+						</ul>
+					</div>
+				</div>
+			</div>
+			<table class="tableB">
+				<thead>
+					<tr>
+						<th class="w70">登録日<br>最終更新日</th>
+						<th class="w70">登録者<br>最終更新者</th>
+						<th class="w66">コードNo</th>
+						<th class="w238">正式名称</th>
+						<th class="w154">システム内 表示社名</th>
+						<th class="w238">備考</th>
+						<th class="w28">編集</th>
+						<th class="w28">削除</th>
+					</tr>
+				</thead>
+			</table>
+			<ul class="sortable">
+				<!--{foreach from=$select key=key item=value name=cnt}-->
+					<li id="<!--{$smarty.foreach.cnt.iteration}-->">
+						<table class="tableB">
+							<tbody>
+								<tr>
+									<td class="w70">
+										<!--{$value.regist_date_format}--><br><!--{$value.update_date_format}-->
+										<input type="hidden" id="FN_codeNumber_<!--{$value.codeNumber}-->" value="<!--{$value.codeNumber}-->">
+										<input type="hidden" id="FN_officialName_<!--{$value.codeNumber}-->" value="<!--{$value.officialName}-->">
+										<input type="hidden" id="FN_constructionStates_<!--{$value.codeNumber}-->" value="<!--{$value.constructionStates}-->">
+										<input type="hidden" id="FN_clientNameInSystem_<!--{$value.codeNumber}-->" value="<!--{$value.clientNameInSystem}-->">
+										<input type="hidden" id="FN_note_<!--{$value.codeNumber}-->" value="<!--{$value.note}-->">
+									</td>
+									<td class="w70 txtCenter"><!--{$value.regist_name}--><br><!--{$value.update_name}--></td>
+									<td class="w66 txtCenter"><!--{$value.codeNumber}--></td>
+									<td class="w238"><!--{$value.officialName}--></td>
+									<td class="w154"><!--{$value.clientNameInSystem}--></td>
+									<td class="w238"><!--{$value.note}--></td>
+									<td class="w28 txtCenter">
+										<!--{if $view_flg2 == 1}-->
+											<p class="iconLink"><a href="#" onclick="company_list_edit('<!--{$value.codeNumber}-->');"><img src="/img/common/icon_detail02.png" height="28" width="28" alt="編集"></a></p>
+										<!--{/if}-->
+									</td>
+									<td class="w28 txtCenter">
+										<!--{if $view_flg2 == 1}-->
+											<p class="iconLink"><a href="#" onclick="company_del('<!--{$value.codeNumber}-->');"><img src="/img/common/icon_reset-data.png" height="14" width="14" alt="削除"></a></p>
+										<!--{/if}-->
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+				<!--{/foreach}-->
+			</ul>
+			<div class="clearfix pt10">
+				<div class="boxRight">
+					<div class="pagination">
+						<p class="resultStates"><!--{$countSelectQuery}-->件中<!--{$pagingArr.start_view}-->〜<!--{$pagingArr.end_view}-->件</p>
+						<ul class="paging">
+							<!--{if $pagingArr.p_cnt > 1 && $pagingArr.rev != ""}-->
+								<li class="toFirstPage"><a href="?page=1<!--{if $searchClientName != ""}-->&searchClientName=<!--{$searchClientName}--><!--{/if}-->" >最初へ</a></li>
+							<!--{/if}-->
+							<!--{if $pagingArr.rev != ""}-->
+								<li><a href="?page=<!--{$pagingArr.rev}--><!--{if $searchClientName != ""}-->&searchClientName=<!--{$searchClientName}--><!--{/if}-->" >&lt;&lt;</a></li>
+							<!--{/if}-->
+							<!--{section name=i start=$pagingArr.p_start loop=$pagingArr.p_end_plus}-->
+								<!--{if $pageNo == $smarty.section.i.index}-->
+									<li class="current"><!--{$smarty.section.i.index}--></li>
+								<!--{else}-->
+									<li><a href="?page=<!--{$smarty.section.i.index}--><!--{if $searchClientName != ""}-->&searchClientName=<!--{$searchClientName}--><!--{/if}-->"><!--{$smarty.section.i.index}--></a></li>
+								<!--{/if}-->
+							<!--{/section}-->
+							<!--{if $pagingArr.next != ""}-->
+								<li><a href="?page=<!--{$pagingArr.next}--><!--{if $searchClientName != ""}-->&searchClientName=<!--{$searchClientName}--><!--{/if}-->" >&gt;&gt;</a></li>
+							<!--{/if}-->
+							<!--{if $pagingArr.p_cnt > 1 && $pagingArr.next != ""}-->
+								<li class="toLastPage"><a href="?page=<!--{$pagingArr.p_cnt}--><!--{if $searchClientName != ""}-->&searchClientName=<!--{$searchClientName}--><!--{/if}-->" >最後へ</a></li>
+							<!--{/if}-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--{/if}-->
+<!--{/if}-->

@@ -1,0 +1,208 @@
+@charset 'utf-8';
+
+/* ----------------------------------------
+	3- 1.ログイン
+	3- 2.
+	3- 3.
+	3- 4.
+	3- 5.
+	3- 6.
+	3- 7.
+	3- 8.
+---------------------------------------- */
+.inputType01{
+	width: 296px;
+	height: 36px;
+	padding: 0 5px;
+	border: 1px solid #CCCCCC;
+	border-radius: 2px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* ----------------------------------------
+  3-1.ログイン
+  ---------------------------------------- */
+#loginPage h1{
+	text-align: center;
+	margin-bottom: 67px;
+	padding-top: 90px;
+}
+
+#loginPage section{
+	background: #FFF;
+	width: 416px;
+	padding: 40px 60px 35px;
+	border-radius: 3px;
+	margin: 0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#loginPage section dt{
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#loginPage section dd{margin-bottom: 25px;}
+
+#loginPage section .checkBox{
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+}
+
+#loginPage section .btnReload{margin: 0;}
+#loginPage section .btnLogin{margin: 0;}
+
+/* ----------------------------------------
+  3-2. ホーム（総合トップ）
+  ---------------------------------------- */
+.topSearchArea{
+	width: 542px;
+	background: #eaf0f6;
+	padding: 30px;
+	margin: 56px auto 30px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.topSearchArea dl{overflow: hidden;}
+
+.topSearchArea dt{
+ 	height: 36px;
+ 	line-height: 36px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: right;
+	float: left;
+	clear: left;
+	margin-bottom: 25px;
+}
+
+.topSearchArea dl dt:first-child,
+.topSearchArea dl dt:first-child+dd{margin-bottom: 38px;}
+.topSearchArea dl dt:first-child+dd p{
+	position: relative;
+	top: 40px;
+ }
+
+.topSearchArea dd{
+	position: relative;
+	width: 398px;
+	height: 36px;
+	float: right;
+	margin-bottom: 25px;
+}
+
+.topSearchArea dd input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 315px;
+	font-size: 13px;
+	margin-right: 10px;
+}
+
+.topSearchArea dd .btnSearch{
+	position: absolute;
+	right: 0;
+}
+
+.topSearchArea .buttonA{height: 28px;}
+
+.topSearchArea .blue{color: #4678c4;}
+
+.topBtnLinks{
+	width: 542px;
+	padding: 30px 18px 18px 42px;
+	border: 1px solid #D4D5D5;
+	margin: 0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.topBtnLinks ul{
+	overflow: hidden;
+	margin-left: -12px;
+}
+
+.topBtnLinks li{
+	float: left;
+	margin: 0 12px 12px 0;
+}
+
+.topBtnLinks li a:hover{background-position: 0 -37px;}
+.topBtnLinks li a{
+	display: block;
+	width: 152px;
+	height: 37px;
+	color: #595757;
+	font-size: 13px;
+	text-align: center;
+	line-height: 37px;
+	background: url(../img/common/btn_link.png) 0 0 no-repeat;
+}
+
+/* ----------------------------------------
+  3-3. 発注書設定
+  ---------------------------------------- */
+.headingB +.formatBtns{
+	width: 810px;
+	padding-top: 15px;
+}
+
+.formatBtns button{
+	width: 150px;
+	margin: 0 7px 9px 0;
+}
+
+/* ----------------------------------------
+  3-4. 各種マスタ編集
+  ---------------------------------------- */
+#masterEdit.topBtnLinks{width: 624px;}
+
+#masterEdit.topBtnLinks li {margin: 0 10px 10px 0;}
+
+#masterEdit.topBtnLinks li a:hover{background-position: 0 0;}
+
+#masterEdit.topBtnLinks li a{
+	font-size: 12px;
+	width: 180px;
+	height: 34px;
+	background: url(../img/common/btn_master-link.png) 0 -34px no-repeat;
+}
+
+/* ----------------------------------------
+  3-5. 発注書 設定画面
+  ---------------------------------------- */
+
+.hacchushoTop{
+	padding: 7px;
+	border: 1px solid #c6c7c7;
+	position: relative;
+}
+
+.destinationArea{
+	position: absolute;
+	top: 40px;
+	margin: auto 0;
+	display: table;
+}
+
+.destinationArea h1{
+	font-size: 16px;
+	text-align: center;
+	border: 1px solid #000;
+}
+
+/* ----------------------------------------
+  3-6.見積
+  ---------------------------------------- */
+ #estimateDetail,
+ #additionalEstimate{display: none;}
