@@ -2958,9 +2958,12 @@
 	</table>
 	<!-- add by 王 2016.10.13 -->
 	<table name="keiri" alias="経理処理" manage_type="table">
-		<template type="index">keiri/contents_index_index.tpl</template>
+                <template type="index">keiri/contents_index_index.tpl</template>
 	</table>
-	<!-- add by nakanishi 2016.10.13 -->
+	<table name="keiri/seikyusho" alias="請求書発行" manage_type="table">
+            <template type="index">keiri/seikyusho/contents_index_index.tpl</template>
+	</table>
+        <!-- add by nakanishi 2016.10.13 -->
 	<table name="keiri/nyukin-shori" alias="入金処理" manage_type="table">
 		<template type="nyukin_shori_index">keiri/nyukin-shori/nyukin_shori_index_index.tpl</template>
 	</table>
